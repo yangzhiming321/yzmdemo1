@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋双人对战</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chess-board"></i> 五子棋双人对战</h1>
+            <p class="subtitle">两位玩家在同一设备上对战，先连成五子者获胜！</p>
+        </header>
+
+        <main>
+            <div class="game-area">
+                <div class="game-info">
+                    <div class="current-player" id="currentPlayer">
+                        <span class="player-icon black"></span>
+                        <span>当前回合：黑棋</span>
+                    </div>
+                    <div class="score">
+                        <div class="score-item">
+                            <span class="player-icon black"></span>
+                            <span>黑棋：</span>
+                            <span id="blackScore">0</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="player-icon white"></span>
+                            <span>白棋：</span>
+                            <span id="whiteScore">0</span>
+                        </div>
+                    </div>
+                    <div class="status" id="gameStatus">游戏进行中...</div>
+                </div>
+
+                <div class="board-container">
+                    <canvas id="gameBoard" width="600" height="600"></canvas>
+                    <div class="board-grid"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="restartBtn" class="btn">
+                        <i class="fas fa-redo"></i> 重新开始
+                    </button>
+                    <button id="undoBtn" class="btn">
+                        <i class="fas fa-undo"></i> 悔棋
+                    </button>
+                    <button id="hintBtn" class="btn">
+                        <i class="fas fa-lightbulb"></i> 提示
+                    </button>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2><i class="fas fa-info-circle"></i> 游戏规则</h2>
+                <ul>
+                    <li>两位玩家轮流在棋盘交叉点上落子</li>
+                    <li>黑棋先行，白棋后行</li>
+                    <li>先形成横、竖、斜任意方向的连续五子者获胜</li>
+                    <li>棋盘大小为15×15</li>
+                    <li>点击"悔棋"可以撤销上一步操作</li>
+                    <li>点击"提示"会高亮显示建议的落子位置</li>
+                </ul>
+
+                <div class="player-info">
+                    <h3><i class="fas fa-users"></i> 玩家信息</h3>
+                    <div class="player black-player">
+                        <span class="player-icon black"></span>
+                        <span>黑棋玩家：先手</span>
+                    </div>
+                    <div class="player white-player">
+                        <span class="player-icon white"></span>
+                        <span>白棋玩家：后手</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 五子棋双人对战 | 设计：网页版五子棋游戏</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
